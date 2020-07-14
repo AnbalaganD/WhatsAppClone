@@ -1,18 +1,26 @@
 package com.whatsapp.module.home
 
+import android.view.ViewGroup
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.recyclerview.widget.RecyclerView
 
 class HomeTabAdapter(
-    fragmentManager: FragmentManager,
     private val fragmentList: List<Fragment>,
     private val titleList: List<String>
-) : FragmentStatePagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+): RecyclerView.Adapter<HomeTabAdapter.TabHolder>() {
 
-    override fun getItem(position: Int): Fragment = fragmentList[position]
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TabHolder {
+        TODO("Not yet implemented")
+    }
 
-    override fun getCount(): Int = fragmentList.count()
+    override fun getItemCount(): Int = fragmentList.size
 
-    override fun getPageTitle(position: Int): CharSequence? = titleList[position]
+    override fun onBindViewHolder(holder: TabHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
+
+    inner class TabHolder(binding: ViewDataBinding): RecyclerView.ViewHolder(binding.root) {
+
+    }
 }

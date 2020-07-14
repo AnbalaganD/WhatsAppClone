@@ -14,8 +14,12 @@ class HomeActivity: AppCompatActivity() {
 
         val fragmentList = arrayListOf(Fragment(), Fragment(), Fragment())
         val fragmentTitles = arrayListOf("CHATS", "STATUS", "CALLS")
-        val adapter = HomeTabAdapter(supportFragmentManager, fragmentList, fragmentTitles)
+        val adapter = HomeTabAdapter(fragmentList, fragmentTitles)
         viewPager.adapter = adapter
-        tabLayout.setupWithViewPager(viewPager)
+
+        val temp = object {
+            var name = "Anbu"
+            val age = 25
+        }
     }
 }
